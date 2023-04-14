@@ -1,0 +1,18 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+
+<h2 class="text-center"><small><i class="bi bi-info-circle"></i></small> Blogs</h2>
+
+<div class="col-md-8 offset-md-2">
+    <br>
+    {% for post in object_list %}
+    <ul id="favLanguages" class="list-group">
+        <li class="list-group-item" style="display:inline-block;">
+            <h5 ><small><i class="bi bi-cpu"></i> {{ post.date|date:"Y-m-d" }}</small><a href="/blog/{{post.id}}">  {{ post.title}}</a></h5>
+        </li>
+    </ul>
+    {% endfor %}
+</div>
+
+{% endblock %}

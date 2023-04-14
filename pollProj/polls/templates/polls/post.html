@@ -1,0 +1,18 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+
+<br>
+<div class="col-md-6 offset-md-4">
+    <h3><a href="/blog/{{post.id}}">{{ post.title }}</a></h3>
+    <h6><small> on {{ post.date }}</small></h6>
+    <div class = "container">
+        {{ post.body|safe|linebreaks}}
+    </div>
+    <br><br>
+
+    <button type="button" class="btn btn-link"><a href="{% url 'blog' %}">Back</a></button>
+
+</div>
+
+{% endblock %}

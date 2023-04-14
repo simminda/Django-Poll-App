@@ -1,0 +1,26 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+  <center>
+
+  {% if searched %}
+    <h1> You searched For {{ searched }}</h1>
+    <br>
+    <div class="card">
+      <div class="card-header">
+        Poll Results
+      </div>
+    </div>
+    {% for poll in polls %}
+      <div class="card-body">
+        <h5><a href = "/polls/{{ question.id }}">{{ poll }}</a></h5>
+      </div>
+    {% endfor %}
+
+  {% else %}
+    <h1>You did not enter anything to search...</h1>
+  {% endif %}
+
+  </center>
+
+{% endblock %}

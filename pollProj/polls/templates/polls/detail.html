@@ -1,0 +1,38 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div style="text-align: center; padding-top: 20%;">
+                <h1>{{question.question_text}}</h1>
+                {% if error_message %}
+                    <p><strong>{{error_message}}</strong></p>
+                {% endif %}
+
+                <form action="{% url 'vote' question.id %}" method="post"> <!--not 'polls:vote' because did not specify app name in urls.py--> 
+                    {% csrf_token %}
+                
+                    {% for choice in question.choice_set.all %}
+                        <input type="radio" name="choice" id="choice {{forloop.counter}}" value="{{ choice.id }}" />
+                        <label for="choice {{ forloop.counter }}">{{ choice.choice_text }}</label>
+                        <br>
+                    {% endfor %}
+                
+                    <!-- Enable/Disable Vote option --> 
+                    <br>
+                    {% if user.is_authenticated %}
+                        <input type="submit" value="Vote" class="btn btn-light btn-lg" />
+                    {% else %}
+                        <input type="submit" value="Vote" disabled class="btn btn-light btn-lg" />
+                        <p><small>You must be logged in to vote</small></p>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

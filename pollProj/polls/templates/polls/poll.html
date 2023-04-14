@@ -1,0 +1,40 @@
+{% extends 'polls/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<h2></h2>
+<p></p><br>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div style="text-align: center;">
+                <h1>Welcome to the Polls Page</h1>
+                <h3>Select a topic below and let your voice be heard!</h3><br>
+                <div class="col-md-8 offset-md-2">
+                    {% if latest_question_list %}
+                        <ul>
+                            {% for question in latest_question_list %}
+                            <li class="list-group-item" >
+                                <a href = "{% url 'detail' question.id %}">{{ question.question_text }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        <br>
+                    {% else %}
+                        <p>No polls are available.</p>
+                    {% endif %}
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
+
+<img src="{% static 'img/valentin-salja-0aX51h4WvAk-unsplash.png' %}" alt="man looking up" style="float: right; margin-top: -150px; margin-left: 250px;">
+
+
+{% endblock %}
+
