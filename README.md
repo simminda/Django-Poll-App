@@ -2,6 +2,7 @@
 
 A Django poll app that also demonstrates blogs and user authentication
 
+
 <h2>Prerequisites</h2>
 <code>python== 3.5 or up and django==2.0 or up</code>
 
@@ -25,6 +26,8 @@ A Django poll app that also demonstrates blogs and user authentication
 <p>Then go to http://127.0.0.1:8000 in your browser</p>
 
 <h2>Project snapshot</h2>
+
+
 <h3>Home page</h3>
 <div align="center">
     <img src="Screenshot - Home.png" width="100%"</img> 
@@ -45,7 +48,7 @@ A Django poll app that also demonstrates blogs and user authentication
     <img src="Screenshot - Voting Results.png" width="100%"</img> 
 </div>
 
-<h3>Pprofile Edit Page</h3>
+<h3>Profile Edit Page</h3>
 <div align="center">
     <img src="Screenshot - Edit Profile.png" width="100%"</img> 
 </div>
@@ -53,5 +56,5 @@ A Django poll app that also demonstrates blogs and user authentication
 <h2>Author</h2>
 <blockquote>
   Simphiwe Ndaba<br>
-  Email: simminda@gmail.com
+  Email: simmi.ndaba@gmail.com
 </blockquote>
